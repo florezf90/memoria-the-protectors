@@ -7,8 +7,8 @@
 // Level can create on this
 // jinx can
 
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Character extends Model {}
 
@@ -27,8 +27,8 @@ Character.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: "race",
-      key: "name",
+      model: 'race',
+      key: 'name',
     },
   },
   age: {
@@ -39,16 +39,16 @@ Character.init({
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: "origin",
-      key: "name",
+      model: 'origin',
+      key: 'name',
     },
   },
   main_focus: {
     type: DataTypes.STRING,
     allowNull: false,
     references: {
-      model: "focus",
-      key: "title",
+      model: 'focus',
+      key: 'title',
     },
   },
   HP: {
@@ -63,4 +63,27 @@ Character.init({
     type: DataTypes.INTEGER,
     allowNull: false,
   },
+  strength: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  reflex: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  fortitude: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+
+  intelligence: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
+  charisma: {
+    type: DataTypes.INTEGER,
+    allowNull: false,
+  },
 });
+
+module.exports = Character;
